@@ -1,0 +1,23 @@
+{
+  "name": "padhai-punjab-server",
+  "version": "1.0.0",
+  "description": "Padhai Punjab API",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning src/index.js",
+    "dev": "node --no-warnings=ExperimentalWarning --watch src/index.js",
+    "seed": "node --no-warnings=ExperimentalWarning src/seed.js --reset",
+    "test": "node --no-warnings=ExperimentalWarning --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.4.0"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  }
+}

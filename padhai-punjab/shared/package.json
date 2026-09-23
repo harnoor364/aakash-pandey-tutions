@@ -1,0 +1,1 @@
+{ "name": "@padhai/shared", "private": true, "type": "module", "main": "constants.js" }
