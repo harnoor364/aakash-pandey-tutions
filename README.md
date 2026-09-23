@@ -83,3 +83,8 @@ npm run start
 
 Remember to set `ANTHROPIC_API_KEY`, `ADMIN_PASSWORD`, and (recommended) `LEADS_WEBHOOK_URL` as
 environment variables on your hosting platform.
+
+## Also in this repo: Padhai Punjab
+
+`padhai-punjab/` contains **Padhai Punjab**, a separate iPhone/Android app (Expo) and API for finding
+verified tutors across Punjab. See [padhai-punjab/README.md](padhai-punjab/README.md).

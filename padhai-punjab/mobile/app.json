@@ -1,17 +1,24 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "Padhai Punjab",
+    "slug": "padhai-punjab",
+    "scheme": "padhaipunjab",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "in.padhaipunjab.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Padhai Punjab uses your front camera to take a live selfie for tutor safety verification.",
+        "NSPhotoLibraryUsageDescription": "Choose a profile photo and upload ID and certificate photos."
+      }
     },
     "android": {
+      "package": "in.padhaipunjab.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#F7F2E8",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -19,13 +26,44 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "plugins": [
       "expo-router",
       "expo-font",
       "expo-secure-store",
-      "expo-splash-screen"
-    ]
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160,
+          "backgroundColor": "#F7F2E8",
+          "dark": {
+            "backgroundColor": "#122019"
+          }
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Padhai Punjab uses your front camera to take a live selfie for tutor safety verification.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Choose a profile photo and upload ID and certificate photos.",
+          "cameraPermission": "Take photos of your ID and certificates."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "apiUrl": "http://localhost:4000"
+    }
   }
 }

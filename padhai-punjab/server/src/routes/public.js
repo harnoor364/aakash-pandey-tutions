@@ -70,7 +70,8 @@ export function publicRoutes({ db, auth, uploads, config }) {
     if (board && !BOARDS.includes(board)) throw bad('Unknown board.', 'board');
     if (mode && !['home', 'online'].includes(mode)) throw bad('Tuition type must be Home or Online.', 'mode');
 
-    const rows = db.prepare('SELECT * FROM tutors WHERE suspended = 0 AND user_id != ?').all(req.user.id);
+    // Find Tutors is for school tuition (Class 1–12); college-only tutors are found under One-Hour Classes.
+    const rows = db.prepare('SELECT * FROM tutors WHERE suspended = 0 AND class_from IS NOT NULL AND user_id != ?').all(req.user.id);
     const list = rows.filter((t) => {
       if (city && t.city !== city) return false;
       if (cls != null && !(t.class_from <= cls && cls <= t.class_to)) return false;
