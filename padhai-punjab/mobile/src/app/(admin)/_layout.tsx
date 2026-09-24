@@ -8,7 +8,7 @@ export default function AdminTabs() {
       tabs={[
         { name: 'index', title: 'Tutor queue', icon: 'shield-checkmark-outline' },
         { name: 'reports', title: 'Safety reports', icon: 'warning-outline' },
-        { name: 'reviews', title: 'Reviews', icon: 'chatbox-ellipses-outline' },
+        { name: 'moderation', title: 'Reviews', icon: 'chatbox-ellipses-outline' },
       ]}
     />
   );
